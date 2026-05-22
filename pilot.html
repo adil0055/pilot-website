@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pilot — an AI agent that runs the admin side of caring for your parents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="pilot.css" />
+</head>
+<body>
+
+<!-- ============== TOP NAV ============== -->
+<header class="topnav">
+  <a href="#top" class="brand">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 32 32" width="22" height="22"><path d="M3 28 L29 4 M3 28 L13 22 M3 28 L9 18" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+    </span>
+    <span class="brand-word">Pilot</span>
+  </a>
+  <nav class="topnav-links">
+    <a href="#product">What it does</a>
+    <a href="#how">How it works</a>
+    <a href="#digest">The Sunday digest</a>
+    <a href="#pricing">Pricing</a>
+  </nav>
+</header>
+
+<!-- ============== HERO ============== -->
+<section class="hero" id="top">
+  <div class="hero-text">
+    <p class="eyebrow mono">An AI agent for the sandwich generation · Built in Kochi</p>
+    <h1 class="hero-head">
+      <span class="hl">Be their</span>
+      <span class="hl"><em>child,</em></span>
+      <span class="hl">not their</span>
+      <span class="hl"><em>secretary.</em></span>
+    </h1>
+    <p class="hero-dek">
+      Pilot is an always-on agent that takes over the bills, denials, refills,
+      fraud alerts and recurring charges that come with caring for an aging
+      parent — so the hours you used to lose to paperwork go back to the
+      people who actually need them.
+    </p>
+    <div class="hero-cta">
+      <a href="#digest" class="btn-primary">See a Sunday digest <span class="arrow">⟶</span></a>
+      <a href="#how" class="btn-ghost">How it works</a>
+    </div>
+    <ul class="hero-tags mono">
+      <li><span class="dot dot-pos"></span> Connects to bank, insurance &amp; mail</li>
+      <li><span class="dot"></span> Works in the background, 24/7</li>
+      <li><span class="dot dot-pos"></span> Approves nothing without you</li>
+    </ul>
+  </div>
+
+  <div class="hero-stage" aria-hidden="true">
+    <!-- Mock inbox panel -->
+    <div class="stage-card stage-inbox">
+      <div class="card-head">
+        <div class="ch-left">
+          <span class="mono small mute">PILOT · CARE DASHBOARD</span>
+          <span class="head-title">This week with Mom</span>
+        </div>
+        <span class="status-pill">
+          <span class="pulse"></span> 4 items handled · 3 need you
+        </span>
+      </div>
+
+      <ul class="inbox-list">
+        <li class="ibx-row">
+          <span class="ibx-icon" data-icon="bill"></span>
+          <div class="ibx-body">
+            <div class="ibx-title">Methodist Hospital · billing audit</div>
+            <div class="ibx-sub">3 line items flagged · $1,317 above schedule</div>
+          </div>
+          <span class="ibx-stat stat-need">Draft ready</span>
+          <span class="ibx-time mono small">Tue 9:14a</span>
+        </li>
+        <li class="ibx-row">
+          <span class="ibx-icon" data-icon="shield"></span>
+          <div class="ibx-body">
+            <div class="ibx-title">Aetna · PT denial</div>
+            <div class="ibx-sub">Appeal drafted with plan-document citations</div>
+          </div>
+          <span class="ibx-stat stat-need">Approve</span>
+          <span class="ibx-time mono small">Wed 4:02p</span>
+        </li>
+        <li class="ibx-row done">
+          <span class="ibx-icon" data-icon="card"></span>
+          <div class="ibx-body">
+            <div class="ibx-title">Costco · double charge resolved</div>
+            <div class="ibx-sub">Reversed $89.40 — confirmed Wednesday</div>
+          </div>
+          <span class="ibx-stat stat-done">Handled</span>
+          <span class="ibx-time mono small">Wed 11:00a</span>
+        </li>
+        <li class="ibx-row">
+          <span class="ibx-icon" data-icon="bell"></span>
+          <div class="ibx-body">
+            <div class="ibx-title">VistaCare RX · unknown merchant</div>
+            <div class="ibx-sub">Two charges of $89 · neither of you recognise</div>
+          </div>
+          <span class="ibx-stat stat-flag">Verify</span>
+          <span class="ibx-time mono small">Thu 7:42a</span>
+        </li>
+        <li class="ibx-row done">
+          <span class="ibx-icon" data-icon="cal"></span>
+          <div class="ibx-body">
+            <div class="ibx-title">Cardiology follow-up · April 9</div>
+            <div class="ibx-sub">Mom attended · summary in family channel</div>
+          </div>
+          <span class="ibx-stat stat-done">Handled</span>
+          <span class="ibx-time mono small">Fri 10:30a</span>
+        </li>
+      </ul>
+
+      <div class="card-foot">
+        <div>
+          <span class="mono small mute">Saved this week</span>
+          <span class="foot-num"><span class="cur">$</span><span class="ct" data-count="1356">0</span></span>
+        </div>
+        <div>
+          <span class="mono small mute">Year-to-date</span>
+          <span class="foot-num"><span class="cur">$</span><span class="ct" data-count="8914">0</span></span>
+        </div>
+        <div>
+          <span class="mono small mute">Time saved</span>
+          <span class="foot-num"><span class="ct" data-count="17">0</span><span class="cur">h</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating bill audit chip -->
+    <div class="stage-card stage-bill float">
+      <div class="bill-head">
+        <span class="mono small mute">Bill audit · live</span>
+        <span class="bill-status">3 errors found</span>
+      </div>
+      <table class="bill-table">
+        <tr><td>IV setup · 36415</td><td class="amt">$148</td><td class="ok">ok</td></tr>
+        <tr class="err"><td>Sterile dressing · 99070</td><td class="amt strike">$612</td><td class="bad">+$487</td></tr>
+        <tr><td>Lab panel · 80053</td><td class="amt">$73</td><td class="ok">ok</td></tr>
+        <tr class="err"><td>Room &amp; board (2nd day)</td><td class="amt strike">$2,148</td><td class="bad">duplicate</td></tr>
+        <tr class="err"><td>Recovery · facility</td><td class="amt strike">$842</td><td class="bad">+$330</td></tr>
+      </table>
+      <div class="bill-foot">
+        <span class="mono small mute">Pilot's draft response</span>
+        <span class="bill-save">– $1,317</span>
+      </div>
+    </div>
+
+    <!-- Floating fraud chip -->
+    <div class="stage-card stage-toast float">
+      <span class="toast-rail"></span>
+      <div class="toast-body">
+        <span class="mono small accent">Fraud · just now</span>
+        <p>Two duplicate charges from <em>VistaCare&nbsp;RX</em> ($89 ea.) on Mom's Visa. Merchant not in her history.</p>
+        <div class="toast-actions">
+          <span class="ta primary">Dispute both</span>
+          <span class="ta">Leave for now</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============== THE SHIFT (single-line problem framing) ============== -->
+<section class="shift" id="shift">
+  <div class="shift-wrap">
+    <p class="kicker mono">The shift nobody warned you about</p>
+    <h2 class="big-line">
+      Caring for a parent used to mean
+      <em>showing up.</em>
+      Today it mostly means
+      <em>paperwork &mdash;</em>
+      five to ten hours of it, every week.
+    </h2>
+
+    <div class="shift-strip">
+      <div class="strip-item">
+        <span class="si-num"><span class="ct" data-count="63">0</span><span class="si-u">M</span></span>
+        <span class="si-cap mono">unpaid caregivers in the U.S.</span>
+      </div>
+      <div class="strip-item">
+        <span class="si-num"><span class="ct" data-count="27">0</span><span class="si-u">h</span></span>
+        <span class="si-cap mono">spent every week, on average</span>
+      </div>
+      <div class="strip-item">
+        <span class="si-num"><span class="si-pre">$</span><span class="ct" data-count="10000">0</span></span>
+        <span class="si-cap mono">paid out of pocket, per year</span>
+      </div>
+      <div class="strip-item">
+        <span class="si-num"><span class="ct" data-count="80">0</span><span class="si-u">%</span></span>
+        <span class="si-cap mono">of medical bills contain an error</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== HOW IT WORKS — pipeline visualization ============== -->
+<section class="how" id="how">
+  <div class="how-head">
+    <p class="kicker mono">How Pilot works</p>
+    <h2 class="section-title">One handshake. Then it runs on its own.</h2>
+    <p class="intro-p">
+      Setup is a thirty-minute call with the adult child. After that, Pilot ingests
+      twelve months of statements, bills and recurring charges, builds a Care
+      Brief of every provider, prescription and active claim — and starts working.
+    </p>
+  </div>
+
+  <div class="pipeline">
+    <svg class="pipe-svg" viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden="true">
+      <path id="pipePath"
+        d="M 60 200 C 220 200, 260 60, 400 60 C 540 60, 580 200, 720 200 C 860 200, 900 60, 1040 60 C 1120 60, 1140 120, 1140 160"
+        fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round"
+        stroke-dasharray="6 6"/>
+    </svg>
+
+    <ol class="pipe-stages">
+      <li class="pipe-stage">
+        <span class="ps-num mono">01</span>
+        <span class="ps-glyph">
+          <svg viewBox="0 0 28 28"><rect x="6" y="3" width="16" height="22" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10 10h8M10 14h8M10 18h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </span>
+        <h4>Mail arrives</h4>
+        <p>Hospital bill, EOB, denial letter, or insurance statement — paper or PDF.</p>
+      </li>
+      <li class="pipe-stage">
+        <span class="ps-num mono">02</span>
+        <span class="ps-glyph">
+          <svg viewBox="0 0 28 28"><circle cx="13" cy="13" r="6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M18 18l6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </span>
+        <h4>Pilot reads it</h4>
+        <p>Line-by-line parse. Procedure codes, dates, payer, amounts owed and paid.</p>
+      </li>
+      <li class="pipe-stage">
+        <span class="ps-num mono">03</span>
+        <span class="ps-glyph">
+          <svg viewBox="0 0 28 28"><path d="M4 6h20M4 14h20M4 22h20" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="9" cy="6" r="2" fill="var(--paper)" stroke="currentColor" stroke-width="1.2"/><circle cx="18" cy="14" r="2" fill="var(--paper)" stroke="currentColor" stroke-width="1.2"/><circle cx="13" cy="22" r="2" fill="var(--paper)" stroke="currentColor" stroke-width="1.2"/></svg>
+        </span>
+        <h4>Cross-checks</h4>
+        <p>Against the Medicare fee schedule, plan benefits, and 501(r) charity-care rules.</p>
+      </li>
+      <li class="pipe-stage">
+        <span class="ps-num mono">04</span>
+        <span class="ps-glyph">
+          <svg viewBox="0 0 28 28"><path d="M5 23l5-1 13-13-4-4-13 13z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </span>
+        <h4>Drafts a response</h4>
+        <p>Dispute letter, appeal with citations, or merchant chargeback — ready to send.</p>
+      </li>
+      <li class="pipe-stage">
+        <span class="ps-num mono">05</span>
+        <span class="ps-glyph">
+          <svg viewBox="0 0 28 28"><path d="M4 15l7 7 13-15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h4>You approve</h4>
+        <p>One tap on a one-paragraph summary. Nothing leaves without your sign-off.</p>
+      </li>
+      <li class="pipe-stage">
+        <span class="ps-num mono">06</span>
+        <span class="ps-glyph">
+          <svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="10" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M14 8v12M11 12c0-1.5 1.5-2 3-2s3 .5 3 2-1.5 2-3 2-3 .5-3 2 1.5 2 3 2 3-.5 3-2" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+        </span>
+        <h4>Money back</h4>
+        <p>Recovered savings post to the family ledger. You see the dollar figure on Sunday.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============== PRODUCT — seven jobs as cards ============== -->
+<section class="product" id="product">
+  <div class="prod-head">
+    <p class="kicker mono">What Pilot actually does</p>
+    <h2 class="section-title">Six jobs, one quiet email.</h2>
+    <p class="intro-p">
+      Each of these used to be a separate app — or a separate evening on the
+      phone. Pilot bundles them into one agent and one weekly note.
+    </p>
+  </div>
+
+  <div class="prod-grid">
+    <!-- 1 -->
+    <article class="prod-card">
+      <header class="pc-head">
+        <span class="pc-num mono">01 / Bills</span>
+        <h3>Medical bill audit &amp; negotiation</h3>
+      </header>
+      <p class="pc-copy">Every bill cross-checked against the Medicare fee schedule, plan benefits, and charity-care rules. Errors trigger a one-click dispute.</p>
+      <div class="pc-viz pc-viz-bill">
+        <div class="bv-row"><span>Procedure 99213</span><span class="bv-amt">$248</span><span class="bv-ok mono">ok</span></div>
+        <div class="bv-row err"><span>Code 99070 &mdash; dressing</span><span class="bv-amt strike">$612</span><span class="bv-bad mono">+$487</span></div>
+        <div class="bv-row err"><span>R&amp;B duplicate day</span><span class="bv-amt strike">$2,148</span><span class="bv-bad mono">dup</span></div>
+        <div class="bv-foot"><span class="mono small mute">Pilot saved</span><span class="bv-save">$1,317</span></div>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="prod-card">
+      <header class="pc-head">
+        <span class="pc-num mono">02 / Insurance</span>
+        <h3>Denial appeals — drafted, cited, ready</h3>
+      </header>
+      <p class="pc-copy">Patient-responsibility line items above threshold trigger an auto-drafted appeal — plan documents, peer-reviewed studies, state law, ready to send.</p>
+      <div class="pc-viz pc-viz-doc">
+        <div class="doc-stamp mono">DRAFT &middot; APPEAL</div>
+        <div class="doc-line w-90"></div>
+        <div class="doc-line w-70"></div>
+        <div class="doc-line w-80"></div>
+        <div class="doc-tag">cited: 29 CFR 2560.503-1</div>
+        <div class="doc-line w-95"></div>
+        <div class="doc-line w-60"></div>
+        <div class="doc-tag">cited: AMA CPT 97110</div>
+        <div class="doc-line w-85"></div>
+        <div class="doc-cta mono">Approve &amp; send →</div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="prod-card">
+      <header class="pc-head">
+        <span class="pc-num mono">03 / Fraud</span>
+        <h3>Fraud &amp; cognitive-decline signals</h3>
+      </header>
+      <p class="pc-copy">24/7 monitoring for duplicate payments, romance-scam flows, unusual gifting and gift-card runs — patterns that often appear years before a diagnosis.</p>
+      <div class="pc-viz pc-viz-feed">
+        <div class="ff-row">
+          <span class="ff-dot ok"></span><span class="ff-txt">Chase debit · grocery · $42.18</span><span class="ff-t mono">2:14p</span>
+        </div>
+        <div class="ff-row">
+          <span class="ff-dot ok"></span><span class="ff-txt">Pharmacy auto-refill · $28.50</span><span class="ff-t mono">3:02p</span>
+        </div>
+        <div class="ff-row flag">
+          <span class="ff-dot bad"></span><span class="ff-txt">VistaCare RX · unknown · $89</span><span class="ff-t mono">3:41p</span>
+        </div>
+        <div class="ff-row flag">
+          <span class="ff-dot bad"></span><span class="ff-txt">VistaCare RX · duplicate · $89</span><span class="ff-t mono">3:42p</span>
+        </div>
+        <div class="ff-row">
+          <span class="ff-dot ok"></span><span class="ff-txt">Utility · auto-pay · $112.00</span><span class="ff-t mono">4:00p</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="prod-card">
+      <header class="pc-head">
+        <span class="pc-num mono">04 / Subscriptions</span>
+        <h3>Every subscription &mdash; even the forgotten ones</h3>
+      </header>
+      <p class="pc-copy">Pilot finds every subscription your parent is still paying for &mdash; including the ones they forgot about. We flag what looks unused and suggest a cancel; nothing leaves without your one-tap approval.</p>
+      <div class="pc-viz pc-viz-subs">
+        <div class="sub-row"><span>Netflix &middot; $15.49/mo</span><span class="sub-tag">keep</span></div>
+        <div class="sub-row"><span>Sirius XM &middot; $19.99/mo</span><span class="sub-tag bad">suggest cancel</span></div>
+        <div class="sub-row"><span>Quibi-Plus &middot; $9.99/mo</span><span class="sub-tag bad">suggest cancel</span></div>
+        <div class="sub-row"><span>Reader's Digest &middot; $4.99/mo</span><span class="sub-tag bad">suggest cancel</span></div>
+        <div class="sub-row"><span>NYTimes &middot; $4/mo</span><span class="sub-tag">keep</span></div>
+        <div class="sub-row"><span>WebMD-Plus &middot; $11.99/mo</span><span class="sub-tag bad">suggest cancel</span></div>
+        <div class="sub-foot mono"><span>Could save</span><span class="bv-save">$554/yr</span></div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="prod-card">
+      <header class="pc-head">
+        <span class="pc-num mono">05 / Appointments</span>
+        <h3>Appointments &amp; medication coordination</h3>
+      </header>
+      <p class="pc-copy">Pilot pulls from MyChart-class portals into one shared family calendar — and reminds her by phone the morning of, in her own voice.</p>
+      <div class="pc-viz pc-viz-cal">
+        <div class="cal-head mono">April · 2026</div>
+        <div class="cal-grid">
+          <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+          <span class="d"> </span><span class="d">1</span><span class="d">2</span><span class="d">3</span><span class="d">4</span><span class="d">5</span><span class="d">6</span>
+          <span class="d">7</span><span class="d ev">8</span><span class="d">9</span><span class="d">10</span><span class="d">11</span><span class="d">12</span><span class="d">13</span>
+          <span class="d">14</span><span class="d ev">15</span><span class="d">16</span><span class="d">17</span><span class="d ev2">18</span><span class="d">19</span><span class="d">20</span>
+          <span class="d">21</span><span class="d">22</span><span class="d">23</span><span class="d ev">24</span><span class="d">25</span><span class="d">26</span><span class="d">27</span>
+        </div>
+        <div class="cal-list">
+          <div><span class="cl-dot"></span> Apr 8 · Cardiology follow-up</div>
+          <div><span class="cl-dot"></span> Apr 15 · Eliquis refill due</div>
+          <div><span class="cl-dot alt"></span> Apr 18 · Primary care</div>
+          <div><span class="cl-dot"></span> Apr 24 · Optometry</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="prod-card">
+      <header class="pc-head">
+        <span class="pc-num mono">06 / Sunday</span>
+        <h3>The Sunday digest &mdash; one note, once a week</h3>
+      </header>
+      <p class="pc-copy">Every Sunday morning, one clean email. No app to open, no dashboard to check &mdash; just what happened this week, what we saved, and the one thing that still needs <em>you.</em></p>
+      <div class="pc-viz pc-viz-voice">
+        <div class="vv-meta mono"><span>Sun &middot; 7:02 a.m.</span><span class="dot dot-pos"></span><span>sunday@joinpilot.com</span></div>
+        <div class="vv-summary">
+          <p><em>This week:</em> caught a $480 billing error, flagged one suspicious transaction, suggested cancelling 3 unused subscriptions. Saved you <em>$534.</em></p>
+          <p>One thing needs you &mdash; Dad's insurer denied his physio claim. <span class="accent">Tap here to send the appeal we already drafted &rarr;</span></p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============== SUNDAY DIGEST SPECIMEN ============== -->
+<section class="digest" id="digest">
+  <div class="digest-head">
+    <p class="kicker mono">The Sunday digest · a specimen</p>
+    <h2 class="section-title">Not a dashboard. <em>A note from someone you trust.</em></h2>
+  </div>
+
+  <article class="letter">
+    <header class="letter-head">
+      <div class="lh-l">
+        <span class="mono small">From</span>
+        <span>Pilot &lt;sunday@joinpilot.com&gt;</span>
+      </div>
+      <div class="lh-r">
+        <span class="mono small">Sunday</span>
+        <span>April 12 · 7:02 a.m. IST &middot; 6:32 p.m. PT</span>
+      </div>
+    </header>
+
+    <p class="letter-greeting"><em>Good morning, Sarah.</em></p>
+
+    <p>
+      Quiet week with your mom. She made cardiology Tuesday (I called the
+      morning of), refilled the Eliquis on time, and Costco is no longer
+      charging her twice. The Sunday three:
+    </p>
+
+    <ol class="letter-list">
+      <li>
+        <span class="lab mono">Approve</span>
+        Aetna denied the March physical-therapy claim ($412). I drafted an
+        appeal — plan-document and ERISA citations attached. Sign and send?
+        <a class="inline-btn" href="#">Review draft ⟶</a>
+      </li>
+      <li>
+        <span class="lab mono">Decide</span>
+        Two duplicate charges from <em>"VistaCare RX"</em> on her Visa, $89
+        each, twelve days apart. Neither of us recognise the merchant.
+        Dispute both?
+        <a class="inline-btn" href="#">Dispute ⟶</a>
+      </li>
+      <li>
+        <span class="lab mono">Note</span>
+        Your sister Megan asked for view-access to the family channel. She
+        was invited last Sunday but hasn't accepted yet. Nudge her?
+        <a class="inline-btn" href="#">Send invite ⟶</a>
+      </li>
+    </ol>
+
+    <div class="letter-ledger">
+      <div>
+        <span class="mono small">This week</span>
+        <span class="big">$1,356</span>
+        <span class="mono small mute">caught &amp; recovered</span>
+      </div>
+      <div>
+        <span class="mono small">Year-to-date</span>
+        <span class="big">$8,914</span>
+        <span class="mono small mute">net of Pilot's fee</span>
+      </div>
+      <div>
+        <span class="mono small">Time</span>
+        <span class="big">17h</span>
+        <span class="mono small mute">we handled this week</span>
+      </div>
+    </div>
+
+    <p class="letter-sign">
+      — Pilot<br/>
+      <span class="mono small mute">Nothing else from us until next Sunday.</span>
+    </p>
+  </article>
+</section>
+
+<!-- ============== IMPACT — animated chart ============== -->
+<section class="impact" id="impact">
+  <div class="impact-wrap">
+    <div class="impact-head">
+      <p class="kicker mono">Six months with Pilot &middot; one family</p>
+      <h2 class="section-title">
+        <span class="ct" data-count="11427">0</span> dollars back. <em>40 hours back.</em>
+      </h2>
+      <p class="intro-p">
+        Composite of Pilot's pilot cohort across twelve sandwich-generation
+        households, October 2025 through March 2026. Categories shown:
+        recovered overbillings, successful appeals, cancelled subscriptions
+        and disputed charges.
+      </p>
+    </div>
+
+    <figure class="chart">
+      <div class="chart-frame">
+        <svg viewBox="0 0 1200 360" preserveAspectRatio="none" class="chart-svg">
+          <!-- grid lines -->
+          <g stroke="var(--hair)" stroke-width="1">
+            <line x1="0" y1="60"  x2="1200" y2="60"/>
+            <line x1="0" y1="140" x2="1200" y2="140"/>
+            <line x1="0" y1="220" x2="1200" y2="220"/>
+            <line x1="0" y1="300" x2="1200" y2="300"/>
+          </g>
+          <!-- area -->
+          <path id="areaPath"
+            d="M0,340 L0,300 L100,278 L200,250 L300,232 L400,180 L500,160 L600,196 L700,142 L800,104 L900,118 L1000,68 L1100,84 L1200,52 L1200,340 Z"
+            fill="var(--accent)" fill-opacity="0.10"/>
+          <!-- line -->
+          <path id="linePath"
+            d="M0,300 L100,278 L200,250 L300,232 L400,180 L500,160 L600,196 L700,142 L800,104 L900,118 L1000,68 L1100,84 L1200,52"
+            fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- markers -->
+          <g class="chart-markers" fill="var(--accent)">
+            <circle cx="0"    cy="300" r="3"/>
+            <circle cx="300"  cy="232" r="3"/>
+            <circle cx="600"  cy="196" r="3"/>
+            <circle cx="900"  cy="118" r="3"/>
+            <circle cx="1200" cy="52"  r="4"/>
+          </g>
+        </svg>
+
+        <div class="chart-labels mono">
+          <span>Oct 2025</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar 2026</span>
+        </div>
+
+        <!-- callouts -->
+        <div class="callout co-1">
+          <span class="mono small">Nov 14</span>
+          <p>Caught a $2,148 duplicate hospital charge.</p>
+        </div>
+        <div class="callout co-2">
+          <span class="mono small">Jan 04</span>
+          <p>Won the Aetna appeal — $1,860 reversed.</p>
+        </div>
+        <div class="callout co-3">
+          <span class="mono small">Feb 21</span>
+          <p>Disputed two unknown $89 charges &mdash; same week.</p>
+        </div>
+      </div>
+
+      <div class="chart-legend">
+        <div><span class="lg-num"><span class="ct" data-count="42">0</span></span><span class="lg-cap mono">errors caught</span></div>
+        <div><span class="lg-num"><span class="ct" data-count="7">0</span></span><span class="lg-cap mono">appeals won</span></div>
+        <div><span class="lg-num"><span class="ct" data-count="11">0</span></span><span class="lg-cap mono">subs cancelled</span></div>
+        <div><span class="lg-num"><span class="ct" data-count="3">0</span></span><span class="lg-cap mono">fraud blocks</span></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============== PRICING ============== -->
+<section class="pricing" id="pricing">
+  <div class="pricing-head">
+    <p class="kicker mono">Plans</p>
+    <h2 class="section-title">Priced like a streaming service. <em>Worth a salary.</em></h2>
+    <p class="intro-p">
+      Two ways in. Most families start direct. Some companies offer Pilot to
+      their workforce as a caregiver benefit through HR platforms.
+    </p>
+  </div>
+
+  <div class="plans">
+    <article class="plan featured">
+      <p class="plan-tag mono">Direct · Consumer</p>
+      <h3 class="plan-name"><em>Pilot,</em> for the family.</h3>
+      <p class="plan-price"><span class="amt">$49</span><span class="per">/mo per parent</span></p>
+      <ul class="plan-list">
+        <li>All seven jobs &mdash; medical, insurance, fraud, subs, calendar, visit notes</li>
+        <li>The Sunday digest</li>
+        <li>Shared family channel · view access for siblings</li>
+        <li>30-day money back, no questions</li>
+      </ul>
+      <p class="plan-note mono small">
+        Annual $490/yr · Add-ons: physical-mail handling +$15/mo, second parent +$25/mo.
+      </p>
+    </article>
+
+    <article class="plan b2b">
+      <p class="plan-tag mono">Channel · Employer benefit</p>
+      <h3 class="plan-name"><em>Pilot,</em> for the workforce.</h3>
+      <p class="plan-price"><span class="amt">$4–7</span><span class="per">PEPM</span></p>
+      <ul class="plan-list">
+        <li>Offered through Mercer, Lively, Compt &amp; Sequoia</li>
+        <li>Replaces the human-concierge category at 50–70% lower cost</li>
+        <li>Cuts caregiver turnover 1–7%, absenteeism 10–50% (HBS, 2024)</li>
+        <li>Annual benchmark survey + utilization reporting</li>
+      </ul>
+      <a class="plan-cta" href="mailto:partnerships@joinpilot.com">Talk to partnerships <span class="arrow">⟶</span></a>
+      <p class="plan-note mono small">
+        Pilot also retains 20–25% of provider-side bill reductions above a $250 covered baseline per quarter.
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="foot">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <span class="brand-mark"><svg viewBox="0 0 32 32" width="22" height="22"><path d="M3 28 L29 4 M3 28 L13 22 M3 28 L9 18" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span>
+      <span class="brand-word">Pilot</span>
+      <p class="foot-line">An AI Chief of Staff for aging parents.</p>
+    </div>
+    <div class="foot-col">
+      <p class="mono small kicker">Product</p>
+      <a href="#product">What it does</a>
+      <a href="#how">How it works</a>
+      <a href="#digest">The Sunday digest</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <div class="foot-col">
+      <p class="mono small kicker">Company</p>
+      <a href="mailto:press@joinpilot.com">Press</a>
+      <a href="mailto:partnerships@joinpilot.com">Partnerships</a>
+      <a href="mailto:hello@joinpilot.com">Say hello</a>
+    </div>
+    <div class="foot-col">
+      <p class="mono small kicker">Kochi</p>
+      <p class="foot-addr">Kochi</p>
+    </div>
+  </div>
+  <div class="foot-rule"></div>
+  <div class="foot-bar">
+    <span class="mono small">© 2026 Pilot Labs · Made on the Malabar coast</span>
+    <span class="mono small">9.5h ahead of ET · 12.5h ahead of PT</span>
+    <span class="mono small">v1.0</span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="pilot.js"></script>
+</body>
+</html>
